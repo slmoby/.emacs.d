@@ -1,0 +1,32 @@
+#+STARTUP: showall hidestars
+* About This .emacs.d files
+** Programs and Euqipment I use
+[[https://www.slmoby.top/context/programs.html][You can check here]]
+** Link
+Use C-c C-l create a link
+** Lesson 1
+Introducing the series and setting up the package manager
+- Show melpa
+- set up melpa
+- installed use-package
+- installed try
+- installed  which-key
+** Lesson 2
+show some org-mode
+- review init.el
+- set up Readme.org
+- [[https://www.slmoby.top][Here's my Blog]]
+You can use key C-c C-o open my website.
+** reload buffer
+Use M-x revert-buffer
+
+** See log
+
+We can use this key 
+M-x view-lossage
+to see the logs on the screen
+
+
+** Switch buffer
+
+C-x b then type buffer name 
