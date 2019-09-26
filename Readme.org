@@ -30,3 +30,25 @@ to see the logs on the screen
 ** Switch buffer
 
 C-x b then type buffer name 
+** Switch Windows
+
+C-x 1 just One windows on your Focus now
+C-x 2 plane Windows 
+C-x 3 perpendicularity windows
+this is a line test 
+** scraching
+C-s scrach text
+C-s to next text
+C-r to p one
+** Copying files
+
+C-w cut text
+C-y past text
+
+
+** scraching packages
+
+M-x describe-package
+
+
+
