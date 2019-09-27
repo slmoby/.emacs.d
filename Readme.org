@@ -19,19 +19,13 @@ show some org-mode
 You can use key C-c C-o open my website.
 ** reload buffer
 Use M-x revert-buffer
-
 ** See log
-
 We can use this key 
 M-x view-lossage
 to see the logs on the screen
-
-
 ** Switch buffer
-
 C-x b then type buffer name 
 ** Switch Windows
-
 C-x 1 just One windows on your Focus now
 C-x 2 plane Windows 
 C-x 3 perpendicularity windows
@@ -41,14 +35,31 @@ C-s scrach text
 C-s to next text
 C-r to p one
 ** Copying files
-
 C-w cut text
 C-y past text
-
-
 ** scraching packages
-
 M-x describe-package
+** Themes
+M-x customize-themes
+
+
+** Code box
+
+Use C+x ' goin
+Use C-c ' end 
+
+#+BEGIN_SRC emacs-lisp
+  (+ 1 1)
+#+END_SRC
+
+#+RESULTS:
+: 1
 
 
 
+** Agenda
+
+
+C-c C-s 选择想要开始的时间
+C-c C-d 选择想要结束的时间
+C-c a 可以打开 Agenda 模式菜单并选择不同的可视方式（ r ）

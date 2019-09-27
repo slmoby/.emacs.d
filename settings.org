@@ -1,0 +1,154 @@
+#+STARTIP: overview
+* Interface tw
+#+BEGIN_SRC emacs-lisp
+  (setq inhibit-startup-message t)
+  ;; tool-bar
+  (tool-bar-mode -1)
+  (fset 'yes-or-no-p 'y-or-n-p)
+  (global-set-key (kbd "<F5>") 'revert-buffer)
+  ;; scroll-bar
+  (scroll-bar-mode -1)
+  (global-linum-mode 1)
+  ;; Setting cursor
+  (setq-default cursor-type 'bar)
+  ;; disbale backup files
+  (setq make-backup-files nil)
+  ;; recentf files
+  (require 'recentf)
+  (recentf-mode 1)
+  (setq recentf-max-menu-item 10)
+  ;; delete selection text
+  (delete-selection-mode 1)
+  ;; hl line
+  (global-hl-line-mode 1)
+  
+#+END_SRC
+* Font setting
+#+BEGIN_SRC emacs-lisp
+(when (member "Operator Mono" (font-family-list))
+  (set-face-attribute 'default nil :font "Operator Mono Book-20"))
+#+END_SRC
+* Try
+#+BEGIN_SRC emacs-lisp
+(use-package try
+  :ensure 
+)
+#+END_SRC
+* Whick-key
+#+BEGIN_SRC emcas-lisp
+(use-package which-key
+  :ensure t
+  :config (which-key-mode))
+#+END_SRC
+* org-mode
+Setting org-bullets
+#+BEGIN_SRC emacs-lisp
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+#+END_SRC
+Setting scr hi
+#+BEGIN_SRC emacs-lisp
+(require 'org)
+(setq org-src-fontify-natively t)
+#+END_SRC
+Agenda
+
+#+BEGIN_SRC emacs-lisp
+(setq org-agenda-files '("~/org"))
+;; 设置 org-agenda 打开快捷键
+(global-set-key (kbd "C-c a") 'org-agenda)
+#+END_SRC
+* Ido
+#+BEGIN_SRC emacs-lisp
+(setq indo-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+#+END_SRC
+* Windows
+#+BEGIN_SRC emacs-lisp
+(use-package ace-window
+  :ensure t
+  :init
+  (progn
+    (global-set-key [remap other-window] 'ace-window)
+    (custom-set-faces
+     '(aw-leading-char-face
+       ((t (:inherit ace-jump-face-foreground :height 3.0)))))
+   ))
+#+END_SRC
+
+* consel
+#+BEGIN_SRC emacs-lisp
+(use-package counsel
+  :ensure t
+  )
+#+END_SRC
+
+* ivy
+#+BEGIN_SRC emacs-lisp
+(use-package ivy
+  :ensure t
+  :diminish (ivy-mode)
+  :bind (("C-x b" . ivy-switch-buffer))
+  :config
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-display-style 'fancy))
+#+END_SRC
+* Swiper
+#+BEGIN_SRC emacs-lisp
+(use-package swiper
+  :ensure try
+  :bind (("C-s" . swiper)
+	 ("C-r" . swiper)
+	 ("C-c C-r" . ivy-resume)
+	 ("M-x" . counsel-M-x)
+	 ("C-x C-f" . counsel-find-file)
+	 )
+  :config
+  (progn
+    (ivy-mode 1)
+    (setq ivy-use-virtual-buffers t)
+    (setq ivy-display-style 'fancy)
+    (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
+    ))
+#+END_SRC
+
+* avy
+#+BEGIN_SRC emacs-lisp
+(use-package avy
+  :ensure t
+  :bind ("M-s" . avy-goto-char))
+#+END_SRC
+* Complete
+#+BEGIN_SRC emacs-lisp
+(use-package auto-complete
+  :ensure t
+  :init
+  (progn
+    (ac-config-default)
+    (global-auto-complete-mode t)
+    ))
+#+END_SRC
+* Haskell
+This is Haskell mdoe config
+#+BEGIN_SRC emacs-lisp
+(use-package haskell-mode
+ :ensure t
+;; :config (require 'haskell-mode-autoloads)
+ )
+#+END_SRC
+* Slime
+#+BEGIN_SRC emacs-lisp
+(use-package slime
+ :ensure t
+ ;; setting sbcl path
+ :config
+ (progn
+   (setq inferior-lisp-program "/usr/bin/sbcl")
+   (setq slime-contribe '(slime-fancy)))
+)
+
+#+END_SRC
