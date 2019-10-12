@@ -35,31 +35,42 @@ C-s scrach text
 C-s to next text
 C-r to p one
 ** Copying files
+M-w Copy text
 C-w cut text
 C-y past text
 ** scraching packages
 M-x describe-package
 ** Themes
 M-x customize-themes
-
-
 ** Code box
-
 Use C+x ' goin
 Use C-c ' end 
-
 #+BEGIN_SRC emacs-lisp
   (+ 1 1)
 #+END_SRC
 
 #+RESULTS:
 : 1
-
-
-
 ** Agenda
-
-
 C-c C-s 选择想要开始的时间
 C-c C-d 选择想要结束的时间
 C-c a 可以打开 Agenda 模式菜单并选择不同的可视方式（ r ）
+** Table
+
+C-c c
+
+like this table
+| name | node | test | iterm |
+|      |      |      |       |
+|      |      |      |       |
+
+
+
+C-c C-e l l
+Export as LaTeX file myfile.tex.
+
+C-c C-e l p
+Export as LaTeX and then process to PDF.
+
+C-c C-e l o
+Export as LaTeX and then process to PDF, then open the resulting PDF file.
