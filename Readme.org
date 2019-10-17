@@ -74,3 +74,8 @@ Export as LaTeX and then process to PDF.
 
 C-c C-e l o
 Export as LaTeX and then process to PDF, then open the resulting PDF file.
+
+
+
+** sudo edit files
+C-x C-f /sudo::/path/to/file
