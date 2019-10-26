@@ -1,7 +1,5 @@
 (use-package company
   :ensure t
-  :init
-;;  :config
-  (progn
-    (global-company-mode t))
+  )
+ (add-hook 'after-init-hook 'global-company-mode)
 (provide 'init-company)
